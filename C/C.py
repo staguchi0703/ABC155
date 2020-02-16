@@ -16,6 +16,13 @@ sys.stdin=f
 ##################################
 # %%
 # 以下ペースト可
-num_list = [int(item) for item in input().split()]
-print('C', num_list)
+import collections as cl
+import sys
+input = sys.stdin.readline
 
+N = int(input().strip())
+S_list = [input().strip() for _ in range(N)]
+print(S_list)
+c = cl.Counter(S_list)
+ordered = c.most_common()
+print(ordered)
